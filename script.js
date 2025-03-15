@@ -17,8 +17,12 @@ async function loadpage(page)
 	window.history.pushState({}, "", page.replace(".html",""));
 	let route = routes[page] || routes[404];
 	console.log(route);
+	if(route == "index.html")
+	{
+		window.location.href = route
+		return;
+	}
 	const html = await fetch(route).then((data) => data.text());
-	console.log(html);
 	document.getElementById("main-content").innerHTML = parser.parseFromString(html, "text/html").getElementById("main-content").innerHTML
 }
 
