@@ -42,3 +42,4 @@ document.addEventListener("DOMContentLoaded",onStart)
 window.onpopstate = function (event) {
   loadpage(window.location.pathname.replace(".html",""));
 };
+loadpage(window.location.pathname.replace(".html",""));
