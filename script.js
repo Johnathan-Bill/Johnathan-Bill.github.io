@@ -19,7 +19,8 @@ async function loadpage(page)
 	console.log(route);
 	if(route == "index.html")
 	{
-		window.location.href = route
+		console.log("here")
+		window.location.href = "www.johnathan-bill.com"
 		return;
 	}
 	const html = await fetch(route).then((data) => data.text());
