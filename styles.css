@@ -1,0 +1,242 @@
+:root {
+  --header-font: clamp(2rem, 2vw + 0.5rem, 5rem);
+  --subheader-font: clamp(1rem, 1vw + 0.45rem, 2rem);
+}
+
+.open-sans-name-header {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.open-sans-title-header {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.open-sans-header {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: italic;
+  font-variation-settings: "wdth" 100;
+}
+.open-sans-subheader {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: italic;
+  font-variation-settings: "wdth" 100;
+}
+.open-sans-body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+html {
+  font-size: 16px;
+}
+#main-content {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 2vh;
+  margin: 0;
+  margin-top: -20px;
+  width: 100%;
+  height: 100%;
+}
+nav {
+  width: 100%;
+  /* background-color: #f7ebf7; */
+  margin: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.intro-card {
+  background-color: #f2f4f3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
+  padding-top: clamp(1rem, 1vh, 38px);
+  overflow: hidden;
+}
+.intro-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  word-wrap: break-word;
+}
+.name {
+  line-height: 0.7em;
+  font-size: 42px;
+  margin-top: 0.5em;
+  word-wrap: break-word;
+  color: #3a4145;
+}
+.current-title {
+  line-height: 0.7em;
+  font-size: var(--subheader-font);
+  color: #a59fa0;
+  margin-bottom: 3%;
+  margin-top: 0;
+  text-align: center;
+}
+
+.resume-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #dadcdb;
+  background-color: #e6e8e7;
+  width: 200px;
+  height: 30px;
+  text-decoration: none;
+}
+.resume-link:visited {
+  color: inherit;
+}
+.resume-link:hover {
+  background-color: #dadcdb;
+}
+.intro-card-image {
+  margin-left: 5rem;
+  position: relative;
+  clip-path: circle();
+  width: auto;
+  height: auto;
+
+  max-width: 225px;
+  max-height: 224px;
+
+  max-width: 100%;
+}
+
+.about-me-card,
+.work-experience-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 2.5vh;
+  width: 100%;
+  max-width: 750px;
+  border-bottom: 1px solid gray;
+}
+.card-title {
+  font-size: 36px;
+  font-style: italic;
+  line-height: 0.7em;
+  margin: 10px;
+}
+ul > .card-text,
+.card-text {
+  font-size: 18px;
+  line-height: 1.75;
+  word-wrap: break-word;
+  margin-bottom: 3%;
+}
+ul > .card-text {
+  font-size: 16px;
+  margin-left: 0px;
+  margin-right: 5px;
+  overflow: initial;
+}
+
+.card-text {
+  margin-left: 50px;
+  margin-right: 50px;
+  overflow: auto;
+}
+
+.job-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+}
+
+.employment-info {
+  order: 1;
+}
+.employment-date {
+  text-align: end;
+  order: 2;
+}
+.job-title {
+  font-style: italic;
+  margin-top: 2%;
+  order: 3;
+  font-size: 20px;
+  line-height: 0.7em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.employment-desc {
+  width: 100%;
+  flex: 100%;
+  order: 4;
+}
+
+.employment-info,
+.employment-date {
+  width: 50%;
+  flex-grow: 1;
+  font-size: 24px;
+  line-height: 0.7em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ul-bullet {
+  display: list-item;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 749px) {
+  .intro-card {
+    flex-direction: column-reverse;
+  }
+  .intro-card-image {
+    margin: 0%;
+  }
+  .current-title {
+    line-height: 1.75;
+  }
+  .job-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .employment-info,
+  .employment-date {
+    width: 100%;
+    text-align: center;
+    line-height: 1.75;
+  }
+}
