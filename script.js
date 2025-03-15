@@ -17,12 +17,6 @@ async function loadpage(page)
 	window.history.pushState({}, "", page.replace(".html",""));
 	let route = routes[page] || routes[404];
 	console.log(route);
-	if(route == "404")
-	{
-		console.log("here")
-		window.location.href = ""
-		return;
-	}
 	const html = await fetch(route).then((data) => data.text());
 	document.getElementById("main-content").innerHTML = parser.parseFromString(html, "text/html").getElementById("main-content").innerHTML
 }
@@ -43,4 +37,3 @@ document.addEventListener("DOMContentLoaded",onStart)
 window.onpopstate = function (event) {
   loadpage(window.location.pathname.replace(".html",""));
 };
-loadpage(window.location.pathname.replace(".html",""));
