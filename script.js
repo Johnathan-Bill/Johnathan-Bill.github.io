@@ -20,7 +20,7 @@ async function loadpage(page)
 	if(route == "404")
 	{
 		console.log("here")
-		window.location.href = "www.johnathan-bill.com"
+		window.location.href = ""
 		return;
 	}
 	const html = await fetch(route).then((data) => data.text());
