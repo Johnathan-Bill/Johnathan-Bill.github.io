@@ -47,12 +47,31 @@ function onStart()
 		let path = this.getAttribute("href").replace(".html","");
 		if (path === "index" || path === "/") path = "";
 
-		console.log(path);
 		if (path === window.location.pathname.replace(".html", "").replace("/", "")) return;
-
 		
-      	window.history.pushState({}, "", `/${path}`);
-		loadContent(path);
+		let main = document.getElementById("main-content");
+		console.log(path); 
+		
+		main.classList.add("fade-out");
+		
+		main.addEventListener('animationend', function fadeOutEnd(event)
+		{
+				main.removeEventListener("animationend", fadeOutEnd);
+
+				window.history.pushState({}, "", `/${path}`);
+                loadContent(path);
+
+				main.classList.remove("fade-out");
+        		main.classList.add("fade-in");;
+				main.addEventListener('animationend', function fadeInEnd(event)
+				{
+					main.classList.remove("fade-in");
+				});
+
+
+			});
+		
+
 		
 
 	})
