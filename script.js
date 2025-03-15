@@ -18,6 +18,7 @@ async function loadpage(page)
 	let route = routes[page] || routes[404];
 	console.log(route);
 	const html = await fetch(route).then((data) => data.text());
+	console.log(html);
 	document.getElementById("main-content").innerHTML = parser.parseFromString(html, "text/html").getElementById("main-content").innerHTML
 }
 
