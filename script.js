@@ -17,7 +17,7 @@ async function loadpage(page)
 	window.history.pushState({}, "", page.replace(".html",""));
 	let route = routes[page] || routes[404];
 	console.log(route);
-	if(route == "index.html")
+	if(route == "404")
 	{
 		console.log("here")
 		window.location.href = "www.johnathan-bill.com"
@@ -28,7 +28,7 @@ async function loadpage(page)
 }
 
 const routes = {
-  404: "index.html",
+  404: "404",
   "": "index.html",
   "/": "index.html",
   "/index": "index.html",
