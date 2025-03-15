@@ -28,6 +28,7 @@ const routes = {
   "/index": "index.html",
   "/home": "index.html",
   "/about": "index.html",
+  "projects.html": "projects.html",
   "/projects.html": "projects.html",
   "/projects": "/projects.html",
 };
@@ -36,4 +37,3 @@ document.addEventListener("DOMContentLoaded",onStart)
 window.onpopstate = function (event) {
   loadpage(window.location.pathname.replace(".html",""));
 };
-loadpage(window.location.pathname.replace(".html", ""));
