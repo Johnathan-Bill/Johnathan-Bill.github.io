@@ -338,7 +338,7 @@ ul > .card-text {
 }
 
 @media screen and (max-width: 749px) {
-  .intro-card {
+  .main-card {
     flex-direction: column-reverse;
   }
   .intro-card-image,.project-image {
