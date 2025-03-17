@@ -70,9 +70,13 @@ function onStart()
 
 
 			});
-		
-
-		
+		console.log(routes[path].file)
+		if(routes[path].file === "index.html")
+			{
+				document.title = "Home"
+			}
+		else	
+			document.title = String(path).charAt(0).toUpperCase() + String(path).slice(1);
 
 	})
 	});

@@ -366,11 +366,11 @@ ul > .card-text {
 }
 
 .fade-out {
-  animation: fadeOut 1s forwards;
+  animation: fadeOut .5s forwards;
 }
 
 .fade-in {
-  animation: fadeIn 1s forwards;
+  animation: fadeIn .5s forwards;
 }
 
 @keyframes fadeOut {
