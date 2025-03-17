@@ -3,7 +3,7 @@
   --subheader-font: clamp(1rem, 1vw + 0.45rem, 2rem);
 }
 
-.open-sans-name-header {
+.open-sans-main-header {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -11,7 +11,7 @@
   font-variation-settings: "wdth" 100;
 }
 
-.open-sans-title-header {
+.open-sans-main-subheader {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -40,6 +40,14 @@
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+
+.open-sans-skills {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-variation-settings: "wdth" 100;
+}
 .open-sans-link {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -63,6 +71,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  padding-bottom: 50px;
 }
 nav {
   width: 100%;
@@ -91,7 +100,7 @@ nav a:hover {
 nav a:visited {
   color: inherit;
 }
-.intro-card {
+.main-card {
   background-color: #f2f4f3;
   width: 100%;
   display: flex;
@@ -104,7 +113,7 @@ nav a:visited {
   padding-top: clamp(1rem, 1vh, 38px);
   overflow: hidden;
 }
-.intro-card-text {
+.main-card-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,14 +123,14 @@ nav a:visited {
   position: relative;
   word-wrap: break-word;
 }
-.name {
+.main-card-header {
   line-height: 0.7em;
   font-size: 42px;
   margin-top: 0.5em;
   word-wrap: break-word;
   color: #3a4145;
 }
-.current-title {
+.main-card-subheader {
   line-height: 0.7em;
   font-size: var(--subheader-font);
   color: #a59fa0;
@@ -147,7 +156,8 @@ nav a:visited {
 .resume-link:hover {
   background-color: #dadcdb;
 }
-.intro-card-image {
+.intro-card-image
+ {
   margin-left: 5rem;
   position: relative;
   clip-path: circle();
@@ -157,20 +167,29 @@ nav a:visited {
   max-width: 225px;
   max-height: 224px;
 
-  max-width: 100%;
+}
+.project-image
+{
+  width: auto;
+  height: auto;
+
+  max-width: 225px;
+  max-height: 224px;
 }
 
 .about-me-card,
-.work-experience-card {
+.work-experience-card,
+.projects-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center;
-  gap: 2.5vh;
+  gap: 3.5vh;
   width: 100%;
   max-width: 750px;
   border-bottom: 1px solid gray;
+  padding-bottom: 15px;
 }
 .card-title {
   font-size: 36px;
@@ -178,13 +197,21 @@ nav a:visited {
   line-height: 0.7em;
   margin: 10px;
 }
-ul > .card-text,
-.card-text {
+ul > .card-text,.card-text
+ {
   font-size: 18px;
   line-height: 1.75;
   word-wrap: break-word;
   margin-bottom: 3%;
 }
+
+.project-desc
+{
+  text-align: center;
+  width: 100%;
+  max-height: min-content;
+}
+
 ul > .card-text {
   font-size: 16px;
   margin-left: 0px;
@@ -206,6 +233,38 @@ ul > .card-text {
   height: auto;
   width: 100%;
 }
+.project-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+}
+.project-container:nth-child(odd)
+{
+  flex-direction: row-reverse;
+}
+.project-header
+{
+  flex: 1 100%;
+  line-height: 0.7em;
+  width:100%
+
+}
+
+.project-subheader
+{
+  flex: 1 100%;
+}
+.text-container
+{
+  display: flex;
+  justify-content: center;
+  max-width: 65%;
+  align-items: center;
+}
 
 .employment-info {
   order: 1;
@@ -223,15 +282,36 @@ ul > .card-text {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.job-skills,.project-skills {
+  font-style: italic;
+  margin-top: 2%;
+  order: 3;
+  font-size: 16px;
+  line-height: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  max-width: 400px;
+  text-align: center;
+}
+
+.project-skills
+{
+  flex: 1 100%;
+  order : 0;
+  max-width: 100%;
+
+}
 
 .employment-desc {
   width: 100%;
   flex: 100%;
-  order: 4;
+  order: 5;
 }
 
 .employment-info,
-.employment-date {
+.employment-date,
+.project-header {
   width: 50%;
   flex-grow: 1;
   font-size: 24px;
@@ -240,6 +320,18 @@ ul > .card-text {
   margin-bottom: 10px;
 }
 
+.project-header
+{
+  text-decoration: none;
+}
+.project-header:visited
+{
+  color: inherit;
+}
+.project-header:hover
+{
+  color: #366083;
+}
 .ul-bullet {
   display: list-item;
   margin-left: 1em;
@@ -249,20 +341,24 @@ ul > .card-text {
   .intro-card {
     flex-direction: column-reverse;
   }
-  .intro-card-image {
+  .intro-card-image,.project-image {
     margin: 0%;
   }
-  .current-title {
+  .main-card-subheader {
     line-height: 1.75;
   }
-  .job-container {
+  .job-container,.project-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
   }
   .employment-info,
-  .employment-date {
+  .employment-date,
+  .job-skill,
+  .project-header,
+  .project-skills,
+  .project-desc {
     width: 100%;
     text-align: center;
     line-height: 1.75;
