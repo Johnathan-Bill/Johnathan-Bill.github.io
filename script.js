@@ -57,6 +57,7 @@ function onStart()
 		if(menu.classList.contains("nav-fall"))
 		{
 			menu.classList.remove("nav-fall")
+	document.body.classList.remove("no-scroll")
 
 			menu.classList.add("nav-rise")
 		}
@@ -110,11 +111,13 @@ function navClick()
 	let menu = document.getElementById("nav-menu")
 	menu.classList.remove("nav-rise")
 	menu.classList.add("nav-fall")
+	document.body.classList.add("no-scroll")
 }
 function navClose()
 {
 	let menu = document.getElementById("nav-menu")
 	menu.classList.remove("nav-fall")
+	document.body.classList.remove("no-scroll")
 
 	menu.classList.add("nav-rise")
 }

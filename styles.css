@@ -456,7 +456,11 @@ ul > .card-text {
 
 }
 
-
+.no-scroll
+{
+  overflow: hidden;
+  height: 100%;
+}
 .fade-out {
   animation: fadeOut .5s forwards;
 }
