@@ -337,6 +337,12 @@ ul > .card-text {
   margin-left: 1em;
 }
 
+@media screen and (max-width: 1279px) { 
+  #ss2-button
+  {
+    visibility: hidden;
+  }
+}
 @media screen and (max-width: 749px) {
   .main-card {
     flex-direction: column-reverse;
