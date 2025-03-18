@@ -18,7 +18,23 @@
     <nav class="open-sans-link">
       <a href="projects.html">Projects</a>
       <a href="index.html">Home</a>
+      <button onclick="navClick()" class="nav-btn">
+        <span class="ham"></span>
+        <span class="ham"></span>
+        <span class="ham"></span>
+      </button>
     </nav>
+    <div class="nav-menu open-sans-link" id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <button
+        class="nav-close-btn"
+        style="background-color: white; border: none"
+        onclick="navClose()"
+      >
+        X
+      </button>
+    </div>
     <div id="main-content">
       <div class="main-card">
         <div class="main-card-text">

@@ -38,7 +38,7 @@ function onStart()
 		return;
 	}
 
-	document.querySelectorAll("nav a").forEach((link) =>
+	document.querySelectorAll("nav a, .nav-menu a").forEach((link) =>
 	{
 
 		link.addEventListener("click", function(event)
@@ -49,9 +49,18 @@ function onStart()
 
 		if (path === window.location.pathname.replace(".html", "").replace("/", "")) return;
 		
+		let menu = document.getElementById("nav-menu")
 		let main = document.getElementById("main-content");
 		console.log(path); 
 		
+
+		if(menu.classList.contains("nav-fall"))
+		{
+			menu.classList.remove("nav-fall")
+
+			menu.classList.add("nav-rise")
+		}
+
 		main.classList.add("fade-out");
 		
 		main.addEventListener('animationend', function fadeOutEnd(event)
@@ -77,7 +86,6 @@ function onStart()
 			}
 		else	
 			document.title = String(path).charAt(0).toUpperCase() + String(path).slice(1);
-
 	})
 	});
 }
@@ -93,4 +101,20 @@ document.addEventListener("DOMContentLoaded",onStart)
 window.onpopstate = function (event)
 {
 	loadContent(window.location.pathname.replace( ".html","").replace('/',""))
+}
+
+
+function navClick()
+{
+	
+	let menu = document.getElementById("nav-menu")
+	menu.classList.remove("nav-rise")
+	menu.classList.add("nav-fall")
+}
+function navClose()
+{
+	let menu = document.getElementById("nav-menu")
+	menu.classList.remove("nav-fall")
+
+	menu.classList.add("nav-rise")
 }

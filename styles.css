@@ -83,6 +83,7 @@ nav {
   border-bottom: 1px solid lightgray;
 }
 
+
 nav a {
   display: flex;
   align-items: center;
@@ -94,9 +95,69 @@ nav a {
   padding-right: 10px;
   text-decoration: none;
 }
+.nav-menu > a
+{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  height: 75px;
+
+
+}
+.nav-btn
+{
+  border: none;
+  visibility: hidden;
+  display: none;
+  width: 50px;
+  background-color: white;
+}
+.nav-close-btn
+{
+  background-color: white;
+  border: none;
+
+}
+.nav-btn:hover,
+.nav-close-btn:hover
+{
+  cursor: pointer;
+}
+
+.nav-menu
+{
+  position: absolute;
+
+  width: 100%;
+  height: 0%;
+  z-index: 1;
+  background-color: white;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 5%;
+
+}
+
+
+
+.nav-menu > a:hover,
 nav a:hover {
   background-color: #f2f4f3;
 }
+.nav-btn:hover
+{
+  background-color: #f2f4f3;
+
+}
+.nav-menu > a:visited,
 nav a:visited {
   color: inherit;
 }
@@ -369,7 +430,32 @@ ul > .card-text {
     text-align: center;
     line-height: 1.75;
   }
+  nav a
+  {
+    visibility: hidden;
+    display: none;
+  }
+.nav-btn
+{
+  visibility: visible;
+  display: block;
+
 }
+}
+
+.ham
+{
+  height: 3.5px;
+  width: 100%;
+  background-color: black;
+  border-radius: 25px;
+  display: block;
+  border: #3a4145;
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+}
+
 
 .fade-out {
   animation: fadeOut .5s forwards;
@@ -377,6 +463,16 @@ ul > .card-text {
 
 .fade-in {
   animation: fadeIn .5s forwards;
+}
+.nav-fall
+{
+  animation: navFall .5s forwards;
+
+}
+.nav-rise
+{
+  animation: navRise .5s forwards;
+
 }
 
 @keyframes fadeOut {
@@ -394,5 +490,38 @@ ul > .card-text {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes navFall {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+
+  100% {
+    height: 100%;
+    opacity: 1;
+
+
+  }
+}
+@keyframes navRise {
+  100% {
+    opacity: 0;
+    height: 0%;
+  }
+99%
+  {
+    opacity: 1;
+  }
+  
+  0% {
+    
+    height: 100%;
+    opacity: 1;
+
   }
 }
