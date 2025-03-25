@@ -33,23 +33,24 @@ async function loadRoutes() {
 function onStart()
 {
 
-	let s = document.cookie;
+	// let s = document.cookie;
 
-	if(s==="")
-	{
-		document.cookie ="theme=light"
-	}
-	s = document.cookie;
-	console.log(getCookie("theme"))
+	// if(s==="")
+	// {
+	// 	document.cookie ="theme=light"
+	// }
+	// s = document.cookie;
+	// console.log(getCookie("theme"))
 
 	if(window.matchMedia)
 		{
-			if(window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("theme") == "dark")
+			// if(window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("theme") == "dark")
+			if(window.matchMedia('(prefers-color-scheme: dark)').matches)
 				{
 					document.documentElement.setAttribute("data-theme", "dark")
 					curr_theme = "dark";
 					document.getElementById("dark-mode-img").src ="../images/dark-mod-inverse.png"
-					document.cookie ="theme=dark"
+					// document.cookie ="theme=dark"
 					
 
 				}
@@ -59,7 +60,7 @@ function onStart()
 					document.getElementById("dark-mode-img").src ="..\\images\\dark-mode.png"
 
 					curr_theme = "light";
-					document.cookie ="theme=light"
+					// document.cookie ="theme=light"
 
 
 				}
@@ -173,7 +174,7 @@ function dark_mode_toggle()
 		case "dark":
 			document.documentElement.setAttribute("data-theme" ,"light")
 			document.getElementById("dark-mode-img").src ="..\\images\\dark-mode.png"
-			document.cookie ="theme=light"
+			// document.cookie ="theme=light"
 
 			curr_theme ="light";
 			break;
@@ -181,28 +182,28 @@ function dark_mode_toggle()
 			document.documentElement.setAttribute("data-theme" ,"dark")
 			document.getElementById("dark-mode-img").src ="..\\images\\dark-mod-inverse.png"
 			curr_theme ="dark";
-			document.cookie ="theme=dark"
+			// document.cookie ="theme=dark"
 
 			break;
 		default:
 			document.documentElement.setAttribute("data-theme" ,"light")
 			document.getElementById("dark-mode-img").src ="..\\images\\dark-mod-inverse.png"
-			document.cookie ="theme=light"
+			// document.cookie ="theme=light"
 
 			curr_theme ="light";
 			break;
 	}
 	
 }
-function getCookie(name)
-{
+// function getCookie(name)
+// {
 
-	let cookies = document.cookie;
+// 	let cookies = document.cookie;
 	
-	let regex = new RegExp(`(?:${name.toLowerCase()})[=](.[A-z]+)`)
-	group = regex.exec(cookies)
+// 	let regex = new RegExp(`(?:${name.toLowerCase()})[=](.[A-z]+)`)
+// 	group = regex.exec(cookies)
 
 
 
-	return group[1];
-}
+// 	return group[1];
+// }
