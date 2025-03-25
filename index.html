@@ -16,24 +16,26 @@
   </head>
   <body>
     <nav class="open-sans-link">
-      <a href="projects.html">Projects</a>
-      <a href="index.html">Home</a>
-      <button onclick="navClick()" class="nav-btn">
-        <span class="ham"></span>
-        <span class="ham"></span>
-        <span class="ham"></span>
-      </button>
+      <div class="link-container">
+        <a href="projects.html">Projects</a>
+        <a href="index.html">Home</a>
+      </div>
+    </button>
+    <button onclick="navClick()" class="nav-btn">
+      <span class="ham"></span>
+      <span class="ham"></span>
+      <span class="ham"></span>
+    </button>
+    <button class="dark-mode-btn" onclick="dark_mode_toggle()">
+      <img id="dark-mode-img"
+        src=""
+        height="max-content"
+      />
     </nav>
     <div class="nav-menu open-sans-link" id="nav-menu">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
-      <button
-        class="nav-close-btn"
-        style="background-color: white; border: none"
-        onclick="navClose()"
-      >
-        X
-      </button>
+      <button class="nav-close-btn" onclick="navClose()">X</button>
     </div>
     <div id="main-content">
       <div class="main-card">

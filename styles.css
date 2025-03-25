@@ -1,7 +1,93 @@
 :root {
   --header-font: clamp(2rem, 2vw + 0.5rem, 5rem);
   --subheader-font: clamp(1rem, 1vw + 0.45rem, 2rem);
+  --nav-border: #d3d3d3;
+  --body-color: white;
+  --body-text-color:black;
+  --main-card-color: #f2f4f3;
+  --main-card-border-color: grey;
+  --link-color :#3a4145;
+  --main-card-header-text-color: #3a4145;
+  --main-card-subheader-text-color: #a59fa0;
+  --resume-link-border-color: #dadcdb;
+  --resume-link-background-color: #e6e8e7;
+  --resume-link-hover-color: #dadcdb;
+  --ham-color: black;
+  --nav-menu-color: white;
+  --nav-hover-color: #f2f4f3;
 }
+@media (prefers-color-scheme: light)
+  
+{
+  :root 
+  {
+
+    --nav-border: #d3d3d3;
+    --body-color: white;
+    --body-text-color:black;
+    --main-card-color: #f2f4f3;
+    --main-card-border-color: grey;
+    --link-color :#3a4145;
+    --main-card-header-text-color: #3a4145;
+    --main-card-subheader-text-color: #a59fa0;
+    --resume-link-border-color: #dadcdb;
+    --resume-link-background-color: #e6e8e7;
+    --resume-link-hover-color: #dadcdb;
+    --ham-color:black;
+    --nav-menu-color: white;
+    --nav-hover-color: #f2f4f3;
+
+
+
+
+  }  
+  
+}  
+
+@media (prefers-color-scheme: dark)
+{
+  :root
+  {
+    --nav-border : #2c2c2c;
+    --body-color: black;
+    --body-text-color:white;
+    --main-card-color: #222423;
+    --main-card-border-color: #7f7f7f;
+    --link-color: #c5beba;
+    --main-card-header-text-color: #c5beba;
+    --main-card-subheader-text-color: #5a605f;
+    --resume-link-border-color: #252324;
+    --resume-link-background-color: #191718;
+    --resume-link-hover-color: #252324;
+    --ham-color:white;
+    --nav-menu-color: black;
+    --nav-hover-color: #0d0b0c;
+
+
+  }
+ 
+}
+
+[data-theme="dark"]
+{
+
+    --nav-border : #2c2c2c;
+    --body-color: black;
+    --body-text-color:white;
+    --main-card-color: #222423;
+    --main-card-border-color: #7f7f7f;
+    --link-color: #c5beba;
+    --main-card-header-text-color: #c5beba;
+    --main-card-subheader-text-color: #5a605f;
+    --resume-link-border-color: #252324;
+    --resume-link-background-color: #191718;
+    --resume-link-hover-color: #252324;
+    --ham-color:white;
+    --nav-menu-color: black;
+    --nav-hover-color: #0d0b0c;
+
+}
+
 
 .open-sans-main-header {
   font-family: "Open Sans", sans-serif;
@@ -61,6 +147,9 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  background-color: var(--body-color);
+  color: var(--body-text-color);
+
 }
 #main-content {
   display: flex;
@@ -78,9 +167,10 @@ nav {
   top: 0;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
   top: 999;
   height: 53px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--nav-border);
 }
 
 
@@ -88,7 +178,7 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #3a4145;
+  color: var(--link-color);
   width: 100px;
   height: 100%;
   padding-left: 10px;
@@ -104,7 +194,7 @@ nav a {
   width: 100%;
   text-decoration: none;
   height: 75px;
-
+  color: var(--link-color);
 
 }
 .nav-btn
@@ -113,17 +203,16 @@ nav a {
   visibility: hidden;
   display: none;
   width: 50px;
-  background-color: white;
 }
 .nav-close-btn
 {
-  background-color: white;
   border: none;
 
 }
 .nav-btn:hover,
 .nav-close-btn:hover
 {
+  background-color: var(--nav-hover-color);
   cursor: pointer;
 }
 
@@ -134,7 +223,6 @@ nav a {
   width: 100%;
   height: 0%;
   z-index: 1;
-  background-color: white;
   opacity: 0;
   overflow: hidden;
   display: flex;
@@ -143,26 +231,37 @@ nav a {
   justify-items: center;
   justify-content: center;
   gap: 5%;
+  background-color: var(--nav-menu-color);
 
 }
-
+.dark-mode-btn
+{
+  background-color: inherit;
+  border: none;
+}
+.nav-btn
+{
+  background-color: inherit;
+}
+.nav-close-btn
+{
+  color: inherit;
+  background-color: inherit;
+  border: none;
+}
 
 
 .nav-menu > a:hover,
-nav a:hover {
-  background-color: #f2f4f3;
-}
-.nav-btn:hover
-{
-  background-color: #f2f4f3;
-
+nav a:hover,
+.nav-btn:hover {
+  background-color: var(--nav-hover-color);
 }
 .nav-menu > a:visited,
 nav a:visited {
-  color: inherit;
+  color: var(--link-color);
 }
 .main-card {
-  background-color: #f2f4f3;
+  background-color: var(--main-card-color);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -170,7 +269,7 @@ nav a:visited {
   align-content: center;
   justify-content: center;
   margin: 0 auto;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--main-card-border-color);
   padding-top: clamp(1rem, 1vh, 38px);
   overflow: hidden;
 }
@@ -189,12 +288,12 @@ nav a:visited {
   font-size: 42px;
   margin-top: 0.5em;
   word-wrap: break-word;
-  color: #3a4145;
+  color: var(--main-card-header-text-color);
 }
 .main-card-subheader {
   line-height: 0.7em;
   font-size: var(--subheader-font);
-  color: #a59fa0;
+  color: var(--main-card-subheader-text-color);
   margin-bottom: 3%;
   margin-top: 0;
   text-align: center;
@@ -205,8 +304,8 @@ nav a:visited {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  border: 1px solid #dadcdb;
-  background-color: #e6e8e7;
+  border: 1px solid var(--resume-link-border-color);
+  background-color: var(--resume-link-background-color);
   width: 200px;
   height: 30px;
   text-decoration: none;
@@ -215,7 +314,7 @@ nav a:visited {
   color: inherit;
 }
 .resume-link:hover {
-  background-color: #dadcdb;
+  background-color: var(--resume-link-hover-color);
 }
 .intro-card-image
  {
@@ -397,6 +496,12 @@ ul > .card-text {
   display: list-item;
   margin-left: 1em;
 }
+.link-container
+{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 
 @media screen and (max-width: 1279px) { 
   #ss2-button
@@ -430,7 +535,7 @@ ul > .card-text {
     text-align: center;
     line-height: 1.75;
   }
-  nav a
+  nav a,.link-container
   {
     visibility: hidden;
     display: none;
@@ -447,7 +552,7 @@ ul > .card-text {
 {
   height: 3.5px;
   width: 100%;
-  background-color: black;
+  background-color: var(--ham-color);
   border-radius: 25px;
   display: block;
   border: #3a4145;
