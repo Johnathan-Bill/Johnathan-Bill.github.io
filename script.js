@@ -50,6 +50,8 @@ function onStart()
 					document.documentElement.setAttribute("data-theme", "dark")
 					curr_theme = "dark";
 					document.getElementById("dark-mode-img").src ="../images/dark-mod-inverse.png"
+					document.getElementById("dark-mode-img").style.display = 'none'
+
 					// document.cookie ="theme=dark"
 					
 
@@ -58,6 +60,8 @@ function onStart()
 				{
 					document.documentElement.setAttribute("data-theme", "light")
 					document.getElementById("dark-mode-img").src ="..\\images\\dark-mode.png"
+					document.getElementById("dark-mode-img").style.display = 'block'
+
 
 					curr_theme = "light";
 					// document.cookie ="theme=light"
