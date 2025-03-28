@@ -239,6 +239,10 @@ nav a {
   background-color: inherit;
   border: none;
 }
+.dark-mode-btn:hover
+{
+  cursor: pointer;
+}
 .nav-btn
 {
   background-color: inherit;
